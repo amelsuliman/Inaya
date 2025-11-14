@@ -1,0 +1,121 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2025-11-14 19:52:02.456475",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "agency_section",
+  "column_break_ebnm",
+  "is_active",
+  "agency_name",
+  "supplier",
+  "supplier_group",
+  "column_break_ryds",
+  "territory",
+  "primary_contact",
+  "grid_section",
+  "items"
+ ],
+ "fields": [
+  {
+   "fieldname": "agency_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Agency Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "territory",
+   "fieldtype": "Link",
+   "label": "Territory",
+   "options": "Territory"
+  },
+  {
+   "fieldname": "primary_contact",
+   "fieldtype": "Link",
+   "label": "Primary Contact",
+   "options": "Contact"
+  },
+  {
+   "default": "1",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Is Active"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Items",
+   "options": "Agency Item"
+  },
+  {
+   "fieldname": "column_break_ebnm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "grid_section",
+   "fieldtype": "Section Break",
+   "label": "Grid"
+  },
+  {
+   "fieldname": "agency_section",
+   "fieldtype": "Section Break",
+   "label": "Agency"
+  },
+  {
+   "fieldname": "column_break_ryds",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "AGY-.YYYY.-.#####",
+   "reqd": 1
+  },
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Supplier",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "supplier_group",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Supplier Group",
+   "options": "Supplier Group"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-11-14 22:55:32.237829",
+ "modified_by": "Administrator",
+ "module": "Inaya",
+ "name": "Agency",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

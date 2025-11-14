@@ -27,7 +27,7 @@
  },
  {
   "charts": [],
-  "content": "[{\"type\":\"header\",\"data\":{\"text\":\"Agency Management\"}}]",
+  "content": "[{\"id\":\"QXzo7yLdA5\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Agency Management</span>\",\"col\":12}},{\"id\":\"KMptSwftl7\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Agency\",\"col\":3}}]",
   "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
@@ -38,7 +38,7 @@
   "is_hidden": 0,
   "label": "Agency Management",
   "links": [],
-  "modified": "2025-11-14 17:59:33.081801",
+  "modified": "2025-11-14 23:24:43.361210",
   "module": "Inaya",
   "name": "Agency Management",
   "number_cards": [],
@@ -48,7 +48,24 @@
   "restrict_to_domain": null,
   "roles": [],
   "sequence_id": 43.0,
-  "shortcuts": [],
+  "shortcuts": [
+   {
+    "color": "Grey",
+    "doc_view": "List",
+    "format": null,
+    "icon": null,
+    "kanban_board": null,
+    "label": "Agency",
+    "link_to": "Agency",
+    "parent": "Agency Management",
+    "parentfield": "shortcuts",
+    "parenttype": "Workspace",
+    "restrict_to_domain": null,
+    "stats_filter": "[]",
+    "type": "DocType",
+    "url": null
+   }
+  ],
   "title": "Agency Management"
  },
  {
