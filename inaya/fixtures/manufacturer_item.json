@@ -1,0 +1,46 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Manufacturer Item",
+  "gtin": null,
+  "item_code": "RAW-2024-00002",
+  "manufacturer": "rer",
+  "modified": "2025-11-15 12:10:26.139647",
+  "name": "45jlrpa2de",
+  "naming_series": null,
+  "part_number": "RAW-2024-00002"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Manufacturer Item",
+  "gtin": null,
+  "item_code": "RAW-2024-00040",
+  "manufacturer": "rer",
+  "modified": "2025-11-15 12:11:09.611232",
+  "name": "4618mp74fs",
+  "naming_series": null,
+  "part_number": "555"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Manufacturer Item",
+  "gtin": "55",
+  "item_code": "RAW-2024-00001",
+  "manufacturer": "erl",
+  "modified": "2025-11-15 12:41:30.529282",
+  "name": "4nq9iah780",
+  "naming_series": null,
+  "part_number": "5"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Manufacturer Item",
+  "gtin": "55",
+  "item_code": "RAW-2024-00037",
+  "manufacturer": "rer",
+  "modified": "2025-11-15 17:32:33.743846",
+  "name": "M-ITem-2025-00001",
+  "naming_series": "M-ITem-.YYYY.-.#####",
+  "part_number": "55"
+ }
+]

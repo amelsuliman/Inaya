@@ -1,0 +1,39 @@
+[
+ {
+  "agency_name": "dd",
+  "docstatus": 0,
+  "doctype": "Agency",
+  "is_active": 0,
+  "items": [],
+  "modified": "2025-11-14 23:11:38.672929",
+  "name": "AGY-2025-00003",
+  "naming_series": "AGY-.YYYY.-.#####",
+  "primary_contact": null,
+  "supplier": null,
+  "supplier_group": null,
+  "territory": null
+ },
+ {
+  "agency_name": "rek",
+  "docstatus": 0,
+  "doctype": "Agency",
+  "is_active": 1,
+  "items": [
+   {
+    "item": "RAW-2024-00001",
+    "lead_time_days": 88,
+    "min_order_qty": 22.0,
+    "parent": "AGY-2025-00008",
+    "parentfield": "items",
+    "parenttype": "Agency"
+   }
+  ],
+  "modified": "2025-11-15 15:34:52.928689",
+  "name": "AGY-2025-00008",
+  "naming_series": "AGY-.YYYY.-.#####",
+  "primary_contact": "ALMAK NIMIR",
+  "supplier": null,
+  "supplier_group": null,
+  "territory": "Rest Of The World"
+ }
+]

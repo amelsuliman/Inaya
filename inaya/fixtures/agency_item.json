@@ -1,0 +1,50 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Agency Item",
+  "item": "RAW-2024-00001",
+  "lead_time_days": 0,
+  "min_order_qty": 0.0,
+  "modified": "2025-11-14 22:52:20.613932",
+  "name": "lhm0ljngel",
+  "parent": "AGY-2025-00001",
+  "parentfield": "items",
+  "parenttype": "Agency"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Agency Item",
+  "item": "RAW-2024-00001",
+  "lead_time_days": 0,
+  "min_order_qty": 0.0,
+  "modified": "2025-11-14 23:11:20.011599",
+  "name": "lt0305aujk",
+  "parent": "AGY-2025-00005",
+  "parentfield": "items",
+  "parenttype": "Agency"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Agency Item",
+  "item": "RAW-2024-00001",
+  "lead_time_days": 0,
+  "min_order_qty": 0.0,
+  "modified": "2025-11-14 23:23:26.705230",
+  "name": "m46jnl10p0",
+  "parent": "AGY-2025-00007",
+  "parentfield": "items",
+  "parenttype": "Agency"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Agency Item",
+  "item": "RAW-2024-00001",
+  "lead_time_days": 88,
+  "min_order_qty": 22.0,
+  "modified": "2025-11-15 15:34:52.928689",
+  "name": "7td1rbsisf",
+  "parent": "AGY-2025-00008",
+  "parentfield": "items",
+  "parenttype": "Agency"
+ }
+]

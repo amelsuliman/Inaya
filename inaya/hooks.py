@@ -233,24 +233,58 @@ app_license = "mit"
 
 # auth_hooks = [
 # 	"inaya.auth.validate"
-# ]
-
-# Automatically update python controller files with type annotations for this app.
-# export_python_type_annotations = True
-
-# default_log_clearing_doctypes = {
-# 	"Logging DocType Name": 30  # days to retain logs
-# }
 
 fixtures = [
+    # Workspaces for Inaya module
     {
         "dt": "Workspace",
-        "filters": [["module", "=", "Inaya"]],
+        "filters": [
+            ["module", "=", "Inaya"]
+        ],
     },
+
+    # Client Scripts belonging to Inaya module
     {
         "dt": "Client Script",
-        "filters": [["module", "=", "Inaya"]],
+        "filters": [
+            ["module", "=", "Inaya"]
+        ],
+    },
+
+    # ---- Sample Data Fixtures (for assignment) ----
+
+    # Agencies: only these two
+    {
+        "dt": "Agency",
+        "filters": [
+            ["name", "in", ["AGY-2025-00008", "AGY-2025-00003"]]
+        ],
+    },
+
+    # Items: only these three
+    {
+        "dt": "Item",
+        "filters": [
+            ["item_code", "in", ["RAW-2024-00037", "RAW-2024-00001", "RAW-2024-00002"]]
+        ],
+    },
+
+    # Manufacturers: only the two you shared
+    {
+        "dt": "Manufacturers",
+        "filters": [
+            ["name", "in", ["MAN-2025-00002", "MAN-2025-00003"]]
+        ],
+    },
+
+    # All Manufacturer Item mappings (for those items/manufacturers)
+    {
+        "dt": "Manufacturer Item",
+    },
+
+    # All Agency Item child rows (for those agencies)
+    {
+        "dt": "Agency Item",
     },
 ]
-
 

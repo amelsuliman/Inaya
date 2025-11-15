@@ -1,0 +1,22 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Manufacturers",
+  "gln": "111",
+  "is_blocked": 0,
+  "manufacturer_name": "Amel",
+  "modified": "2025-11-15 17:27:18.076922",
+  "name": "MAN-2025-00002",
+  "naming_series": "MAN-.YYYY.-.#####"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Manufacturers",
+  "gln": "222",
+  "is_blocked": 1,
+  "manufacturer_name": "Dan",
+  "modified": "2025-11-15 17:27:32.726002",
+  "name": "MAN-2025-00003",
+  "naming_series": "MAN-.YYYY.-.#####"
+ }
+]
