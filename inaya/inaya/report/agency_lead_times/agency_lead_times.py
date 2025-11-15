@@ -1,10 +1,9 @@
-# inaya/inaya/report/agency_lead_times/agency_lead_times.py
-
 import frappe
 from frappe import _
 
 
 def execute(filters=None):
+    filters = frappe._dict(filters or {})
     columns = get_columns()
     data = get_data(filters)
     return columns, data
@@ -17,14 +16,14 @@ def get_columns():
             "fieldname": "agency",
             "fieldtype": "Link",
             "options": "Agency",
-            "width": 200,
+            "width": 180,
         },
         {
             "label": _("Item"),
             "fieldname": "item_code",
             "fieldtype": "Link",
             "options": "Item",
-            "width": 200,
+            "width": 180,
         },
         {
             "label": _("Min Order Qty"),
@@ -41,19 +40,55 @@ def get_columns():
     ]
 
 
-def get_data(filters=None):
-    return frappe.db.sql(
-        """
-        SELECT
-            ai.parent        AS agency,
-            ai.item_code     AS item_code,
-            ai.min_order_qty AS min_order_qty,
-            ai.lead_time_days
-        FROM `tabAgency Item` ai
-        INNER JOIN `tabAgency` a
-            ON a.name = ai.parent
-        WHERE a.docstatus < 2
-        ORDER BY a.agency_name, ai.item_code
-        """,
-        as_dict=True,
+def get_data(filters):
+    """
+    Reads from child table "Agency Item" and returns:
+      - parent (Agency)       -> agency
+      - <item-link-field>     -> item_code
+      - min_order_qty
+      - lead_time_days
+
+    It does NOT assume the item field is called 'item_code'.
+    Instead, it looks for the first Link field whose options == 'Item'.
+    """
+
+    # Find the actual item fieldname dynamically
+    meta = frappe.get_meta("Agency Item")
+    item_fieldname = None
+    for df in meta.fields:
+        if df.fieldtype == "Link" and df.options == "Item":
+            item_fieldname = df.fieldname
+            break
+
+    if not item_fieldname:
+        # No Link-to-Item field found; tell the user clearly
+        frappe.throw(
+            _(
+                "No Link field to Item found in 'Agency Item' DocType. "
+                "Please add a Link field pointing to Item, or update the report logic."
+            )
+        )
+
+    conditions = {"parenttype": "Agency"}
+
+    # Optional filter by Agency (if you add it as a filter in the report)
+    if filters.get("agency"):
+        conditions["parent"] = filters.agency
+
+    # Build fields list using the detected item_fieldname
+    fields = [
+        "parent as agency",
+        f"{item_fieldname} as item_code",
+        "min_order_qty",
+        "lead_time_days",
+    ]
+
+    rows = frappe.get_all(
+        "Agency Item",
+        fields=fields,
+        filters=conditions,
+        order_by="agency asc, item_code asc",
     )
+
+    return rows
+

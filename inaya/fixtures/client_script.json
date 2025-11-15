@@ -1,0 +1,24 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Agency",
+  "enabled": 1,
+  "modified": "2025-11-14 21:53:07.913187",
+  "module": "Inaya",
+  "name": "Agent list",
+  "script": "frappe.listview_settings['Agency'] = {\r\n    get_indicator(doc) {\r\n        if (!doc.is_active) {\r\n            // label, color, filter\r\n            return [__('Inactive'), 'red', 'is_active,=,0'];\r\n        } else {\r\n            return [__('Active'), 'green', 'is_active,=,1'];\r\n        }\r\n    },\r\n};\r\n",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Item",
+  "enabled": 1,
+  "modified": "2025-11-15 12:51:38.856561",
+  "module": "Inaya",
+  "name": "Item Api",
+  "script": "frappe.ui.form.on('Item', {\r\n    refresh: function(frm) {\r\n        // Only after the document is saved\r\n        if (frm.is_new()) {\r\n            return;\r\n        }\r\n\r\n        frm.add_custom_button(__('Show Manufacturer Mappings'), function() {\r\n            if (!frm.doc.name) {\r\n                frappe.msgprint(__('Please save the Item first.'));\r\n                return;\r\n            }\r\n\r\n            frappe.call({\r\n                method: 'inaya.inaya.doctype.manufacturer_item.manufacturer_item.get_mappings',\r\n                args: {\r\n                    item_code: frm.doc.name\r\n                },\r\n                freeze: true,\r\n                freeze_message: __('Fetching manufacturer mappings...'),\r\n                callback: function(r) {\r\n                    var rows = r.message || [];\r\n\r\n                    if (!rows.length) {\r\n                        frappe.msgprint(__('No manufacturer mappings found for this Item.'));\r\n                        return;\r\n                    }\r\n\r\n                    // build HTML table (no template strings to avoid syntax issues)\r\n                    var html = '<table class=\"table table-bordered table-sm\">';\r\n                    html += '<thead><tr>' +\r\n                        '<th>' + __('Manufacturer') + '</th>' +\r\n                        '<th>' + __('Item Code') + '</th>' +\r\n                        '<th>' + __('Part Number') + '</th>' +\r\n                        '<th>' + __('GTIN') + '</th>' +\r\n                        '</tr></thead><tbody>';\r\n\r\n                    rows.forEach(function(row) {\r\n                        html += '<tr>' +\r\n                            '<td>' + frappe.utils.escape_html(row.manufacturer || '') + '</td>' +\r\n                            '<td>' + frappe.utils.escape_html(row.item_code || '') + '</td>' +\r\n                            '<td>' + frappe.utils.escape_html(row.part_number || '') + '</td>' +\r\n                            '<td>' + frappe.utils.escape_html(row.gtin || '') + '</td>' +\r\n                            '</tr>';\r\n                    });\r\n\r\n                    html += '</tbody></table>';\r\n\r\n                    frappe.msgprint({\r\n                        title: __('Manufacturer Mappings'),\r\n                        message: html,\r\n                        wide: 1\r\n                    });\r\n                }\r\n            });\r\n        });\r\n    }\r\n});\r\n",
+  "view": "Form"
+ }
+]

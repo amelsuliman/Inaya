@@ -245,7 +245,12 @@ app_license = "mit"
 fixtures = [
     {
         "dt": "Workspace",
-        "filters": [["module", "=", "Inaya"]]
-    }
+        "filters": [["module", "=", "Inaya"]],
+    },
+    {
+        "dt": "Client Script",
+        "filters": [["module", "=", "Inaya"]],
+    },
 ]
+
 

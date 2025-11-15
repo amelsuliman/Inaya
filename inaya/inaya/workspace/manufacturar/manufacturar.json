@@ -1,7 +1,7 @@
 {
  "charts": [],
- "content": "[{\"type\":\"header\",\"data\":{\"text\":\"Manufacturar\"}}]",
- "creation": "2025-11-14 17:48:01.409234",
+ "content": "[{\"id\":\"IM5aC0QdaW\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h3\\\"><b>Manufacturars</b></span>\",\"col\":12}},{\"id\":\"YcBKeDc_rS\",\"type\":\"paragraph\",\"data\":{\"text\":\"<span class=\\\"h5\\\"><b>Masters:</b></span>\",\"col\":12}},{\"id\":\"O8dCWzBQco\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Manufacturers Master\",\"col\":3}},{\"id\":\"dMGLiCk-dS\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Manufacturer Item\",\"col\":3}},{\"id\":\"eJNPeNixBb\",\"type\":\"paragraph\",\"data\":{\"text\":\"<span class=\\\"h5\\\"><b>Reports:</b></span>\",\"col\":12}},{\"id\":\"rTMvDesW0F\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Items by Manufacturer\",\"col\":3}},{\"id\":\"3Ovi-yT7_P\",\"type\":\"paragraph\",\"data\":{\"text\":\"<span class=\\\"h5\\\"><b>Api:</b></span>\",\"col\":12}},{\"id\":\"5CrA7lws6g\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Manufacturer Mappings API\",\"col\":3}}]",
+ "creation": "2025-11-15 15:12:26.819543",
  "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Manufacturar",
  "links": [],
- "modified": "2025-11-14 17:59:24.252165",
+ "modified": "2025-11-15 15:31:14.725237",
  "modified_by": "Administrator",
  "module": "Inaya",
  "name": "Manufacturar",
@@ -24,6 +24,38 @@
  "quick_lists": [],
  "roles": [],
  "sequence_id": 44.0,
- "shortcuts": [],
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Manufacturers Master",
+   "link_to": "Manufacturers",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Manufacturer Mappings API",
+   "link_to": "Item",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Items by Manufacturer",
+   "link_to": "Items by Manufacturer",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Manufacturer Item",
+   "link_to": "Manufacturer Item",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
  "title": "Manufacturar"
 }
