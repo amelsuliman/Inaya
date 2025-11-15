@@ -1,5 +1,5 @@
 # inaya/inaya/doctype/agency/agency.py
-aml
+
 import frappe
 from frappe.model.document import Document
 from frappe import _
